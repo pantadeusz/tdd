@@ -5,7 +5,7 @@ cd ..
 
 D=$PWD
 
-cd dbunit/hellodbunit/scripts
+cd java-dbunit/hellodbunit/scripts
 ./server.sh &
 SRVPID=$!
 cd $D

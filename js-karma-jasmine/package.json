@@ -1,0 +1,22 @@
+{
+  "name": "karmatest",
+  "version": "0.0.1",
+  "description": "example of karma usage",
+  "main": "app.js",
+  "scripts": {
+    "test": "./node_modules/karma/bin/karma start"
+  },
+  "author": "Tadeusz Puźniakowski",
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine-core": "^2.6.4",
+    "jasmine-jquery": "^2.1.1",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.1.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4"
+  },
+  "dependencies": {
+    "karma-cli": "^1.0.1"
+  }
+}

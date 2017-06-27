@@ -5,11 +5,11 @@ cd ..
 
 D=$PWD
 
-cd java-dbunit/hellodbunit/scripts
+cd hsqldb-scripts
 ./server.sh &
 SRVPID=$!
 cd $D
-cd jdbc/hellojdbc
+cd java-jdbc/hellojdbc
 mvn test
 kill $SRVPID
 

@@ -8,6 +8,7 @@ D=$PWD
 cd hsqldb-scripts
 ./server.sh &
 SRVPID=$!
+sleep 1s
 cd $D
 cd java-jdbc/hellojdbc
 mvn test

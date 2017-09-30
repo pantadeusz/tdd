@@ -9,9 +9,8 @@ cd hsqldb-scripts
 ./server.sh &
 SRVPID=$!
 sleep 1s
-
-# todo: tests
-
-
+cd $D
+cd java-jdbc/hellojdbc
+mvn test
 kill $SRVPID
 

@@ -5,13 +5,15 @@ cd ..
 
 D=$PWD
 
-cd hsqldb-scripts
-./server.sh &
-SRVPID=$!
-sleep 1s
-
-# todo: tests
+# cd hsqldb-scripts
+# ./server.sh &
+# SRVPID=$!
+# sleep 1s
 
 
-kill $SRVPID
+cd zao/01junit/junittest
+mvn test
+
+
+# kill $SRVPID
 

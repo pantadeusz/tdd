@@ -13,6 +13,9 @@ D=$PWD
 
 cd zao/01junit/junittest
 mvn test
+cd "$D"
+cd zao/02mock/mockExample
+mvn test
 
 
 # kill $SRVPID

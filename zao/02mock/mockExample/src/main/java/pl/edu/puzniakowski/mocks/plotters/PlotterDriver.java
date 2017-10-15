@@ -5,8 +5,8 @@ package pl.edu.puzniakowski.mocks.plotters;
  */
 
 public interface PlotterDriver {
-    public void gotoXY(int x, int y);
+    public void gotoXY(int x, int y) throws IllegalArgumentException;
     public int getPositionX();
     public int getPositionY();
-    public void resetPosition();
+    public boolean resetPosition();
 }

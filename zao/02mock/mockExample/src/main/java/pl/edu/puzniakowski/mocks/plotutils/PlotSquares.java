@@ -11,7 +11,7 @@ public class PlotSquares {
         plotterDriver.resetPosition();
     }
 
-    public void drawSquareInPlace(int r) {
+    public void drawSquareInPlace(int r) throws IllegalArgumentException {
         int x0 = plotterDriver.getPositionX();
         int y0 = plotterDriver.getPositionY();
         plotterDriver.gotoXY(x0 - r, y0 - r);

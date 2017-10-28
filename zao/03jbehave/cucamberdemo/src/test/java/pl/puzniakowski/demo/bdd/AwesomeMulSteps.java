@@ -22,7 +22,7 @@ public class AwesomeMulSteps {
         assertNotNull(awesomeMul);
     }
 
-    @When("^numbers (\\d+) and (\\d+) are multiplied$")
+    @When("^numbers ([-]*\\d+) and ([-]*\\d+) are multiplied$")
     public void numbers_are_multiplied(double a, double b) throws Throwable {
         awesomeMul.mul(a,b);
     }

@@ -1,4 +1,4 @@
-Feature: Cucumber demo
+Feature: AwesomeMul
   The demo shows how to test mutliplication app
   and how to write BDD tests in
   Cucumber

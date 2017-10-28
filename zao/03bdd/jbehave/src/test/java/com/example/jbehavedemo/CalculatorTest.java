@@ -19,8 +19,10 @@ public class CalculatorTest extends JUnitStory {
 		// where to find the stories
 				.useStoryLoader(new LoadFromClasspath(this.getClass()))
 				.useStoryReporterBuilder(
-						new StoryReporterBuilder().withDefaultFormats()
-								.withFormats(Format.CONSOLE));
+						new StoryReporterBuilder()
+								.withDefaultFormats()
+								.withFormats(Format.CONSOLE)
+				);
 	}
 
 	// Here we specify the steps classes

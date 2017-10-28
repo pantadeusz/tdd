@@ -30,4 +30,5 @@ public class CalculatorSteps {
   	public void shouldSubstract(int result){
   		assertEquals(result, calc.subtract());
   	}
+
 }

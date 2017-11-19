@@ -12,6 +12,9 @@ import static org.junit.Assert.assertNotNull;
 public class AwesomeMulSteps {
 
     private AwesomeMul awesomeMul;
+
+    // UWAGA: NIE MYLIĆ Z org.junit.Before !!!!
+    // JAK NIE JESTEŚ PEWIEN - wrzuć te rzeczy do "Given"
     @Before
     public void setUp() {
         awesomeMul = new AwesomeMul();

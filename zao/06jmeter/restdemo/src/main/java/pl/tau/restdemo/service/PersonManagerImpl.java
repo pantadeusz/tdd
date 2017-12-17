@@ -85,7 +85,8 @@ public class PersonManagerImpl implements  PersonManager {
 
     @Override
     public Person getPerson(Person person) {
-        throw new NotImplementedException(); // TODO: Implemet it!
+	return null;        
+//throw new NotImplementedException(); // TODO: Implemet it!
     }
 
     public List<Person> getAllPersons() {

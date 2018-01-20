@@ -12,8 +12,8 @@ CLIBS= -std=c++11 -fopenmp -ldl -rdynamic
 BASESOURCES = $(wildcard src/*.cpp)
 BASEOBJS := $(BASESOURCES:src%.cpp=build%.o)
 
-TESTSOURCES = $(wildcard src/test/*.cpp)
-TESTOBJS := $(TESTSOURCES:src%.cpp=build%.o)
+TESTSOURCES = $(wildcard test/*.cpp)
+TESTOBJS := $(TESTSOURCES:test%.cpp=build/test%.o)
 
 #
 ################## ENDCONDIF ###############
@@ -32,7 +32,7 @@ build/%.o : src/%.cpp
 	@echo $<
 	gcc -c $(CPPFLAGS) $< -o $@
 
-build/test/%.o : src/test/%.cpp
+build/test/%.o : test/%.cpp
 	@echo $<
 	gcc -c $(CPPFLAGS) $< -o $@
 

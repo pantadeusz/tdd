@@ -8,6 +8,10 @@
 
 namespace crud {
 
+/**
+ * @brief Entity object
+ ************/
+ 
 struct Person {
 	int id;
 	std::string name;

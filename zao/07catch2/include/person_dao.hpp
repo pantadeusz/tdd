@@ -9,7 +9,7 @@
 namespace crud {
 
 /**
- * @brief some simple abstract database interface
+ * @brief Simple CRUD for person
  ************/
 
 class Person_dao {

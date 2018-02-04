@@ -1,0 +1,20 @@
+{
+  "name": "jstests",
+  "version": "0.0.1",
+  "description": "Testing tests in jasmine",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "author": "TPP",
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine-core": "^2.9.1",
+    "karma": "^2.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-cli": "^1.0.1",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-jasmine": "^1.1.1",
+    "karma-phantomjs-launcher": "^1.0.4"
+  }
+}

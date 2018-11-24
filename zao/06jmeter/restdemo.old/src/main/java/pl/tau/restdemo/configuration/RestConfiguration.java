@@ -14,6 +14,7 @@ import java.util.List;
 public class RestConfiguration extends WebMvcConfigurerAdapter {
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> messageConverters) {
+        // messageConverters.add(new MappingJackson2HttpMessageConverter());
         super.configureMessageConverters(messageConverters);
     }
 }

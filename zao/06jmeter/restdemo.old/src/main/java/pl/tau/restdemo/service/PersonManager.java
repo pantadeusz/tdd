@@ -10,12 +10,10 @@ import pl.tau.restdemo.domain.Person;
 
 public interface PersonManager {
 	public Connection getConnection();
-	public void setConnection(Connection connection) throws SQLException;
+	public void deletePerson(Person person) throws SQLException;
+	public void clearPersons() throws SQLException;
 	public int addPerson(Person person);
-	public int deletePerson(Person person);
-	public int updatePerson(Person person) throws SQLException;
-	public Person getPerson(long id) throws SQLException;
-	public String introduceSelf();
-	public int deleteAll();
+	public Person getPerson(Person person);
 	public List<Person> getAllPersons();
+
 }

@@ -9,7 +9,12 @@ public class Person {
 	
 	public Person() {
 	}
-
+//
+//	public Person(String name, int yob) {
+//		super();
+//		this.name = name;
+//		this.yob = yob;
+//	}
 	public long getId() {
 		return id;
 	}

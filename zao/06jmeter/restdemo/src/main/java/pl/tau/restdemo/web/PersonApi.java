@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import pl.tau.restdemo.domain.Person;
 import pl.tau.restdemo.service.PersonManager;
 
+import java.sql.SQLException;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -24,28 +26,39 @@ public class PersonApi {
         return "This is non rest, just checking if everything works.";
     }
 
-    @RequestMapping(value = "/person/{id}", method = RequestMethod.GET, 
-    produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/person/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public Person getPerson(@PathVariable("id") Long id) {
-        // todo
-        return null;
+    public Person getPerson(@PathVariable("id") Long id) throws SQLException {
+        return personManager.getPerson(id);
     }
 
-    @RequestMapping(value = "/persons", 
-    method = RequestMethod.GET, 
-    produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/persons", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public List<Person> getPersons(@RequestParam(value = "filter", defaultValue = "") String filter) {
-        return personManager.getAllPersons();
+    public List<Person> getPersons(@RequestParam(value = "filter", required = false) String f) throws SQLException {
+        List<Person> persons = new LinkedList<Person>();
+        for (Person p : personManager.getAllPersons()) {
+            if (f == null) {
+                persons.add(p);
+            } else if (p.getName().contains(f)) {
+                persons.add(p);
+            }
+        }
+        return persons;
     }
 
-    @RequestMapping(value = "/person", 
-    consumes = MediaType.APPLICATION_JSON_VALUE,
-    method = RequestMethod.POST)
+    @RequestMapping(value = "/person",
+        method = RequestMethod.POST,
+        consumes = MediaType.APPLICATION_JSON_VALUE,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    public Person addPerson(@RequestBody Person p) {
+        if (personManager.addPerson(p) < 1) return null;
+        return p;
+    }
+
+    @RequestMapping(value = "/person/{id}", method = RequestMethod.DELETE)
     @ResponseBody
-    public void putPerson(@RequestBody Person person) {
-        personManager.addPerson(person);
+    public Long deletePerson(@PathVariable("id") Long id) throws SQLException {
+        return new Long(personManager.deletePerson(personManager.getPerson(id)));
     }
 
 }

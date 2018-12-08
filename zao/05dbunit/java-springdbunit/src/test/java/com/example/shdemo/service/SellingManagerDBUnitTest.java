@@ -52,7 +52,6 @@ public class SellingManagerDBUnitTest {
     Person p = new Person();
     p.setFirstName("Kaziu");
     p.setPin("8754");
-    // new Date()
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
     p.setRegistrationDate(simpleDateFormat.parse("2015-05-20"));
 

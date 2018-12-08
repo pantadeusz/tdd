@@ -1,6 +1,5 @@
 package com.example.shdemo.domain;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -19,7 +18,7 @@ public class Person {
 	private String pin;// = "";
 	private Date registrationDate;// = new Date();
 
-	private List<Car> cars;// = new ArrayList<Car>();
+	public List<Car> cars;// = new ArrayList<Car>();
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

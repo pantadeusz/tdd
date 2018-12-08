@@ -43,22 +43,17 @@ public class SellingMangerHibernateImpl implements SellingManager {
 		person = (Person) sessionFactory.getCurrentSession().get(Person.class,
 				person.getId());
 		
-		// lazy loading here
 		for (Car car : person.getCars()) {
 			car.setSold(false);
 			sessionFactory.getCurrentSession().update(car);
 		}
-		//person.getCars().clear();
-        //sessionFactory.getCurrentSession().update(person);
-
 		sessionFactory.getCurrentSession().delete(person);
 	}
 
 	@Override
 	public List<Car> getOwnedCars(Person person) {
-		person = (Person) sessionFactory.getCurrentSession().get(Person.class,
+		person = sessionFactory.getCurrentSession().get(Person.class,
 				person.getId());
-		// lazy loading here - try this code without (shallow) copying
 		List<Car> cars = new ArrayList<Car>(person.getCars());
 		return cars;
 	}
@@ -72,7 +67,11 @@ public class SellingMangerHibernateImpl implements SellingManager {
 
 	@Override
 	public Person findClientByPin(String pin) {
-		return (Person) sessionFactory.getCurrentSession().getNamedQuery("person.byPin").setString("pin", pin).uniqueResult();
+		return (Person) sessionFactory
+			.getCurrentSession()
+			.getNamedQuery("person.byPin")
+			.setParameter("pin", pin)
+			.uniqueResult();
 	}
 
 
@@ -103,7 +102,6 @@ public class SellingMangerHibernateImpl implements SellingManager {
 	}
 	@Override
 	public void disposeCar(Person person, Car car) {
-
 		person = (Person) sessionFactory.getCurrentSession().get(Person.class,
 				person.getId());
 		car = (Car) sessionFactory.getCurrentSession().get(Car.class,
